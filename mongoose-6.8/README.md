@@ -1,6 +1,7 @@
 # Mongoose 6.8 MQTT
 
-Example Mongoose 6.8 MQTT project. No preparations included.
+Example Mongoose 6.8 MQTT project.
+
 
 ## Install
 
@@ -10,7 +11,13 @@ make download
 make compile
 ```
 
-## Intercept
+## Network data 
+
+A sample network traffic capture is stored as `data_0.pickle`. 
+Just copy/move it to the `in/` directory to start fuzzing. 
+Alternatively, you can intercept it by yourself.
+
+### Intercept
 
 Listen on port 10'000, as server cannot change port:
 ```
@@ -46,3 +53,10 @@ ClientTcpThread terminating
 Got 4 packets
 Storing into file: /ffw-examples/mongoose-6.8/in/data_0.pickle
 ```
+
+## Fuzzing
+
+```
+python /ffw/ffw.py --config config.py --basedir /ffw --fuzz
+```
+
