@@ -6,7 +6,7 @@
     "version": "6.8",
 
     # additional comment about this project (optional)
-    "comment": "",
+    "comment": "MQTT",
 
     # Path to target
     "target_bin": "bin/mqtt_broker",
