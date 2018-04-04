@@ -19,7 +19,11 @@ compile:
 	cd mongoose/examples/mqtt_broker; make CFLAGS_EXTRA="-fsanitize=address"
 	cp mongoose/examples/mqtt_broker/mqtt_broker bin/
 
+
+fuzz:
+	python /ffw/ffw.py --config config.py --basedir /ffw --fuzz
+
 clean:
 	rm bin/mqtt_broker
 	rm mqtt_client
-	cd mongoose; make clean
+	cd mongoose/exmples/mqtt_broker; make clean
