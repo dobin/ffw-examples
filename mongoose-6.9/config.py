@@ -32,7 +32,7 @@
     # no need to change after this line, usually
 
     # hongg stuff
-    "honggpath": "/home/dobin/Development/honggfuzz/honggfuzz",
+    "honggpath": "/Development/honggfuzz/honggfuzz",
     "honggcov": "sw",
     "honggmode_option": None,  # will be overwritten based on honggcov
 

@@ -8,19 +8,19 @@ download:
 	git clone https://github.com/cesanta/mongoose.git
 
 	# go to version 6.9
-	cd mongoose; git checkout 6.9
+	cd mongoose; git checkout 6.8
 
 patch:
 	echo "patch"
 
 compile:
-	# enable address sanitizer
-	#export HFUZZ_CC_ASAN="true"
-
-	# compile with honggfuzz compiler
-	#cd mongoose/examples/mqtt_broker; make CC="~/Development/honggfuzz/hfuzz_cc/hfuzz-gcc"
-	cd mongoose/examples/mqtt_broker; make CFLAGS_EXTRA="-fsanitize=address"
+	# compile with honggfuzz compiler, and enabled asan
+	cd mongoose/examples/mqtt_broker; make HFUZZ_CC_ASAN="true" CC="/Development/honggfuzz/hfuzz_cc/hfuzz-gcc"
 	cp mongoose/examples/mqtt_broker/mqtt_broker bin/
+
+
+fuzz:
+	python /ffw/ffw.py --config config.py --basedir /ffw --honggmode
 
 clean:
 	rm -f bin/mqtt_broker
