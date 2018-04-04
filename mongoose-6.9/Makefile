@@ -8,7 +8,7 @@ download:
 	git clone https://github.com/cesanta/mongoose.git
 
 	# go to version 6.9
-	cd mongoose; git checkout 6.8
+	cd mongoose; git checkout 6.9
 
 patch:
 	echo "patch"
