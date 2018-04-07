@@ -1,0 +1,10 @@
+Seed: 21779433665766435
+Fuzzer: Radamsa
+Target: /Development/ffw-examples/libcoap/bin/coap-server
+Time: Sat Apr  7 13:54:27 2018
+Fuzzerpos: -
+Signal: 0
+Exitcode: 0
+Reallydead: 0
+PID: 0
+Asanoutput: empty
