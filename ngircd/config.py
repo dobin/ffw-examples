@@ -15,7 +15,7 @@
     # separate arguments by space
     # keywords: ""%(port)i" is the port the server will be started on
     # it has no args
-    "target_args": "--nodaemon -f ffw-ngircd.conf",
+    "target_args": "--nodaemon -f ffw-ngircd-%(port)i.conf",
     #"target_args": "%(port)i",
 
     # if you cant specify the port on the command line,
