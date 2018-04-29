@@ -2,7 +2,7 @@
 all: requirements download patch compile
 
 requirements:
-	mkdir bin in out temp verified
+	mkdir bin corpus crashes temp verified
 
 download:
 	git clone https://github.com/cesanta/mongoose.git
