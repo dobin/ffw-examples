@@ -3,7 +3,7 @@ all: requirements download patch compile
 
 requirements:
 	apt-get -y install autoconf automake pkg-config libtool
-	mkdir bin out temp verified
+	mkdir bin crashes corpus temp verified
 
 download:
 	git clone https://github.com/obgm/libcoap.git

@@ -5,6 +5,8 @@
     # which version of the software are we fuzzing (optional)
     "version": "6.8",
 
+    "use_netnamespace": True,
+
     # additional comment about this project (optional)
     "comment": "MQTT",
 
@@ -20,7 +22,7 @@
     "target_port": 1883,
 
     # how many fuzzing instances should we start
-    "processes": 1,
+    "processes": 2,
 
     # "tcp" or "udp" protocol?
     "ipproto": "tcp",

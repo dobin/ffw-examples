@@ -8,6 +8,9 @@
     # additional comment about this project (optional)
     "comment": "MQTT",
 
+    # enable namespaces (required root, and possibly nesting)
+    "use_netnamespace": True,
+
     # Path to target
     "target_bin": "bin/mqtt_broker",
 
@@ -20,7 +23,7 @@
     "target_port": 1883,
 
     # how many fuzzing instances should we start
-    "processes": 1,
+    "processes": 2,
 
     # "tcp" or "udp" protocol?
     "ipproto": "tcp",
