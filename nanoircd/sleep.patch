@@ -1,0 +1,11 @@
+--- nanoircd/nanoircd.c.orig	2018-05-05 13:42:52.522239252 +0000
++++ nanoircd/nanoircd.c	2018-05-05 13:43:00.778369097 +0000
+@@ -21,7 +21,7 @@
+ #include <stdarg.h>
+ #include <stdlib.h>
+ #define closesocket close
+-#define Sleep(t) usleep(t*1000)
++#define Sleep(t) usleep(t*10)
+ #endif
+ 
+ #define MAX_CLIENTS 32
