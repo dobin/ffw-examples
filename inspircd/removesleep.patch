@@ -1,0 +1,10 @@
+--- src/inspircd.cpp.orig	2018-05-05 12:41:28.170442942 +0000
++++ src/inspircd.cpp	2018-05-05 12:41:33.238501868 +0000
+@@ -541,7 +541,6 @@
+ 		<< "TO START INSPIRCD AS ROOT, HIT CTRL+C NOW AND RESTART" << std::endl
+ 		<< "THE PROGRAM AS A NORMAL USER. YOU HAVE BEEN WARNED!" << std::endl << std::endl
+ 		<< "InspIRCd starting in 20 seconds, ctrl+c to abort..." << std::endl;
+-		sleep(20);
+ 	}
+ #endif
+ 

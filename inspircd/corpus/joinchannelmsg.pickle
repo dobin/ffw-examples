@@ -1,0 +1,188 @@
+(dp0
+S'parentFilename'
+p1
+NsS'networkData'
+p2
+(lp3
+(dp4
+S'from'
+p5
+S'cli'
+p6
+sS'data'
+p7
+S'CAP LS\r\nNICK root\r\nUSER root root localhost :root\r\n'
+p8
+sS'index'
+p9
+I0
+sa(dp10
+g5
+S'srv'
+p11
+sg7
+S':irc.example.net CAP * LS :multi-prefix\r\n'
+p12
+sg9
+I1
+sa(dp13
+g5
+g6
+sg7
+S'CAP REQ :multi-prefix\r\n'
+p14
+sg9
+I2
+sa(dp15
+g5
+g11
+sg7
+S':irc.example.net CAP root ACK :multi-prefix\r\n'
+p16
+sg9
+I3
+sa(dp17
+g5
+g6
+sg7
+S'CAP END\r\n'
+p18
+sg9
+I4
+sa(dp19
+g5
+g11
+sg7
+S':irc.example.net 001 root :Welcome to the Internet Relay Network root!~root@127.0.0.1\r\n:irc.example.net 002 root :Your host is irc.example.net, running version ngircd-24 (x86_64/pc/linux-gnu)\r\n:irc.example.net 003 root :This server has been started Sat Apr 14 2018 at 11:20:38 (UTC)\r\n:irc.example.net 004 root irc.example.net ngircd-24 abBcCFiIoqrRswx abehiIklmMnoOPqQrRstvVz\r\n:irc.example.net 005 root RFC2812 IRCD=ngIRCd CHARSET=UTF-8 CASEMAPPING=ascii PREFIX=(qaohv)~&@%+ CHANTYPES=#&+ CHANMODES=beI,k,l,imMnOPQRstVz CHANLIMIT=#&+:0 :are supported on this server\r\n:irc.example.net 005 root CHANNELLEN=50 NICKLEN=9 TOPICLEN=490 AWAYLEN=127 KICKLEN=400 MODES=5 MAXLIST=beI:50 EXCEPTS=e INVEX=I PENALTY :are supported on this server\r\n:irc.example.net 251 root :There are 1 users and 0 services on 1 servers\r\n:irc.example.net 254 root 1 :channels formed\r\n:irc.example.net 255 root :I have 1 users, 0 services and 0 servers\r\n:irc.example.net 265 root 1 1 :Current local users: 1, Max: 1\r\n:irc.example.net 266 root 1 1 :Current global users: 1, Max: 1\r\n:irc.example.net 250 root :Highest connection count: 1 (2 connections received)\r\n:irc.example.net 422 root :MOTD file is missing\r\n'
+p20
+sg9
+I5
+sa(dp21
+g5
+g6
+sg7
+S'MODE root +i\r\n'
+p22
+sg9
+I6
+sa(dp23
+g5
+g11
+sg7
+S':root!~root@127.0.0.1 MODE root :+i\r\n'
+p24
+sg9
+I7
+sa(dp25
+g5
+g6
+sg7
+S'PING irc.example.net\r\n'
+p26
+sg9
+I8
+sa(dp27
+g5
+g11
+sg7
+S':irc.example.net PONG irc.example.net :irc.example.net\r\n'
+p28
+sg9
+I9
+sa(dp29
+g5
+g6
+sg7
+S'JOIN #test\r\n'
+p30
+sg9
+I10
+sa(dp31
+g5
+g11
+sg7
+S':root!~root@127.0.0.1 JOIN :#test\r\n:irc.example.net 353 root = #test :@root\r\n:irc.example.net 366 root #test :End of NAMES list\r\n'
+p32
+sg9
+I11
+sa(dp33
+g5
+g6
+sg7
+S'MODE #test\r\n'
+p34
+sg9
+I12
+sa(dp35
+g5
+g11
+sg7
+S':irc.example.net 324 root #test +\r\n:irc.example.net 329 root #test 1523704923\r\n'
+p36
+sg9
+I13
+sa(dp37
+g5
+g6
+sg7
+S'WHO #test\r\n'
+p38
+sg9
+I14
+sa(dp39
+g5
+g11
+sg7
+S':irc.example.net 352 root #test ~root 127.0.0.1 irc.example.net root H@ :0 root\r\n:irc.example.net 315 root #test :End of WHO list\r\n'
+p40
+sg9
+I15
+sa(dp41
+g5
+g6
+sg7
+S'MODE #test b\r\n'
+p42
+sg9
+I16
+sa(dp43
+g5
+g11
+sg7
+S':irc.example.net 368 root #test :End of channel ban list\r\n'
+p44
+sg9
+I17
+sa(dp45
+g5
+g6
+sg7
+S'PRIVMSG #test :bla\r\n'
+p46
+sg9
+I18
+sa(dp47
+g5
+g6
+sg7
+S'QUIT :leaving\r\n'
+p48
+sg9
+I19
+sa(dp49
+g5
+g11
+sg7
+S':irc.example.net NOTICE root :Connection statistics: client 0.2 kb, server 1.7 kb.\r\nERROR :"leaving"\r\n'
+p50
+sg9
+I20
+sasS'seed'
+p51
+NsS'time'
+p52
+NsS'filename'
+p53
+S'joinchannelmsg.pickle'
+p54
+s.
