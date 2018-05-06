@@ -9,7 +9,7 @@
     "comment": "https://github.com/inspircd/inspircd.git",
 
     # Path to target
-    "target_bin": "inspircd/run/bin/inspircd",
+    "target_bin": "bin/bin/inspircd",
 
     # target arguments
     # separate arguments by space
@@ -21,7 +21,7 @@
     "target_port": 6668,
 
     # how many fuzzing instances should we start
-    "processes": 1,
+    "processes": 16,
 
     # "tcp" or "udp" protocol?
     "ipproto": "tcp",
