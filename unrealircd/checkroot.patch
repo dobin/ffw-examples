@@ -1,0 +1,11 @@
+--- unrealircd-4.0.17/src/ircd.c.orig	2018-05-06 14:01:51.159273844 +0000
++++ unrealircd-4.0.17/src/ircd.c	2018-05-06 14:02:03.027548100 +0000
+@@ -1029,7 +1029,7 @@
+ 			"For more information, see:\n"
+ 			"https://www.unrealircd.org/docs/Do_not_run_as_root\n"
+ 			"\n");
+-		exit(1);
++//		exit(1);
+ 	}
+ # ifdef	PROFIL
+ 	(void)monstartup(0, etext);

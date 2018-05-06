@@ -1,27 +1,27 @@
 {
     # name of the software we fuzz
-    "name": "inspircd",
+    "name": "unrealircd",
 
     # which version of the software are we fuzzing (optional)
-    "version": "v2.0.26",
+    "version": "4.0.17",
 
     # additional comment about this project (optional)
-    "comment": "https://github.com/inspircd/inspircd.git",
+    "comment": "",
 
     # Path to target
-    "target_bin": "bin/bin/inspircd",
+    "target_bin": "bin/unrealircd/bin/unrealircd",
 
     # target arguments
     # separate arguments by space
     # keywords: ""%(port)i" is the port the server will be started on
-    "target_args": "--nofork --config=/ffw-examples/inspircd/bin/inspircd.conf --runasroot",
+    "target_args": "-F",
 
     # if you cant specify the port on the command line,
     # hardcode it here. Note that it will work only with one fuzzing instance.
-    "target_port": 6668,
+    "target_port": 6661,
 
     # how many fuzzing instances should we start
-    "processes": 8,
+    "processes": 1,
 
     # "tcp" or "udp" protocol?
     "ipproto": "tcp",
