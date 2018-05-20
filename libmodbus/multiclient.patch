@@ -1,0 +1,30 @@
+--- libmodbus-3.0.6/tests/unit-test-server.c.orig	2018-05-20 16:33:10.417567691 +0000
++++ libmodbus-3.0.6/tests/unit-test-server.c	2018-05-20 16:36:44.228164721 +0000
+@@ -100,7 +100,6 @@
+ 
+     if (use_backend == TCP) {
+         socket = modbus_tcp_listen(ctx, 1);
+-        modbus_tcp_accept(ctx, &socket);
+     } else if (use_backend == TCP_PI) {
+         socket = modbus_tcp_pi_listen(ctx, 1);
+         modbus_tcp_pi_accept(ctx, &socket);
+@@ -112,6 +111,10 @@
+             return -1;
+         }
+     }
++        
++    
++    for(;;) {
++    modbus_tcp_accept(ctx, &socket);
+ 
+     for (;;) {
+         rc = modbus_receive(ctx, query);
+@@ -141,7 +144,7 @@
+             break;
+         }
+     }
+-
++    }
+     printf("Quit the loop: %s\n", modbus_strerror(errno));
+ 
+     if (use_backend == TCP) {
