@@ -22,27 +22,31 @@ fuzz:
 	# fuzz1
 	rm -f corpus/*
 	cp corpus.init/* corpus/
-	timeout --preserve-status 1h python /ffw/ffw.py --config config1.py --basedir /ffw --honggmode; echo "Fuzz1"
+	timeout --foreground --preserve-status 10s python /ffw/ffw.py --config config1.py --basedir /ffw --honggmode; echo "Fuzz1"
 	mv fuzzer_stats plot_data fuzz1/
+	sleep 60
 	# fuzz2
 	rm -f corpus/*
 	cp corpus.init/* corpus/
-	timeout --preserve-status 1h python /ffw/ffw.py --config config2.py --basedir /ffw --honggmode; echo "Fuzz2"
+	timeout --foreground --preserve-status 1h python /ffw/ffw.py --config config2.py --basedir /ffw --honggmode; echo "Fuzz2"
 	mv fuzzer_stats plot_data fuzz2/
+	sleep 60
 	# fuzz3
 	rm -f corpus/*
 	cp corpus.init/* corpus/
-	timeout --preserve-status 1h python /ffw/ffw.py --config config3.py --basedir /ffw --honggmode; echo "Fuzz3"
+	timeout --foreground --preserve-status 1h python /ffw/ffw.py --config config3.py --basedir /ffw --honggmode; echo "Fuzz3"
 	mv fuzzer_stats plot_data fuzz3/
+	sleep 60
 	# fuzz4
 	rm -f corpus/*
 	cp corpus.init/* corpus/
-	timeout --preserve-status 1h python /ffw/ffw.py --config config4.py --basedir /ffw --honggmode; echo "Fuzz4"
+	timeout --foreground --preserve-status 1h python /ffw/ffw.py --config config4.py --basedir /ffw --honggmode; echo "Fuzz4"
 	mv fuzzer_stats plot_data fuzz4/
+	sleep 60
 	# fuzz5
 	rm -f corpus/*
 	cp corpus.init/* corpus/
-	timeout --preserve-status 1h python /ffw/ffw.py --config config5.py --basedir /ffw --honggmode; echo "Fuzz5"
+	timeout --foreground --preserve-status 1h python /ffw/ffw.py --config config5.py --basedir /ffw --honggmode; echo "Fuzz5"
 	mv fuzzer_stats plot_data fuzz5/
 
 clean:
