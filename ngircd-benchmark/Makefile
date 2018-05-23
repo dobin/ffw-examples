@@ -22,34 +22,38 @@ fuzz:
 	# fuzz1
 	rm -f corpus/*
 	cp corpus.init/* corpus/
-	timeout --foreground --preserve-status 10s python /ffw/ffw.py --config config1.py --basedir /ffw --honggmode; echo "Fuzz1"
+	timeout --foreground --preserve-status 1h python /ffw/ffw.py --config config1.py --basedir /ffw --honggmode; echo "Fuzz1"
 	mv fuzzer_stats plot_data fuzz1/
 	sleep 60
 	# fuzz2
-	rm -f corpus/*
+	mv corpus fuzz1/
+	mkdir corpus
 	cp corpus.init/* corpus/
 	timeout --foreground --preserve-status 1h python /ffw/ffw.py --config config2.py --basedir /ffw --honggmode; echo "Fuzz2"
 	mv fuzzer_stats plot_data fuzz2/
 	sleep 60
 	# fuzz3
-	rm -f corpus/*
+	mv corpus fuzz2/
+	mkdir corpus	
 	cp corpus.init/* corpus/
 	timeout --foreground --preserve-status 1h python /ffw/ffw.py --config config3.py --basedir /ffw --honggmode; echo "Fuzz3"
 	mv fuzzer_stats plot_data fuzz3/
 	sleep 60
 	# fuzz4
-	rm -f corpus/*
+	mv corpus fuzz3/
+	mkdir corpus
 	cp corpus.init/* corpus/
 	timeout --foreground --preserve-status 1h python /ffw/ffw.py --config config4.py --basedir /ffw --honggmode; echo "Fuzz4"
 	mv fuzzer_stats plot_data fuzz4/
 	sleep 60
 	# fuzz5
-	rm -f corpus/*
+	mv corpus fuzz4/
+	mkdir corpus
 	cp corpus.init/* corpus/
 	timeout --foreground --preserve-status 1h python /ffw/ffw.py --config config5.py --basedir /ffw --honggmode; echo "Fuzz5"
 	mv fuzzer_stats plot_data fuzz5/
+	mv corpus fuzz5
 
 clean:
-	rm -f bin/mqtt_broker
-	rm -f mqtt_client
-	cd mongoose/examples/mqtt_broker; make clean
+	rm -f bin/ngircd 
+	rm -rf ngircd
