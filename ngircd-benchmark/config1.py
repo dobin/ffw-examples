@@ -1,4 +1,8 @@
+
 {
+    # protocol.py with class Protocol
+    "use_protocol": True,
+
     # name of the software we fuzz
     "name": "ngircd",
 
@@ -21,7 +25,9 @@
     "target_port": 6669,
 
     # how many fuzzing instances should we start
-    "processes": 16,
+    "processes": 4,
+
+    "recvTimeout": 0.1,
 
     # "tcp" or "udp" protocol?
     "ipproto": "tcp",

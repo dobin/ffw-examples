@@ -1,0 +1,54 @@
+diff -Nur ngircd.orig/src/ngircd/conn-func.c ngircd/src/ngircd/conn-func.c
+--- ngircd.orig/src/ngircd/conn-func.c	2018-05-26 14:41:23.030058534 +0000
++++ ngircd/src/ngircd/conn-func.c	2018-05-26 14:49:03.090986595 +0000
+@@ -101,7 +101,7 @@
+ 	if (My_Connections[Idx].delaytime < t)
+ 		My_Connections[Idx].delaytime = t;
+ 
+-	My_Connections[Idx].delaytime += Seconds;
++	//My_Connections[Idx].delaytime += Seconds;
+ 
+ #ifdef DEBUG
+ 	Log(LOG_DEBUG,
+diff -Nur ngircd.orig/src/ngircd/conn.c ngircd/src/ngircd/conn.c
+--- ngircd.orig/src/ngircd/conn.c	2018-05-26 14:41:23.030058534 +0000
++++ ngircd/src/ngircd/conn.c	2018-05-26 14:49:08.247042205 +0000
+@@ -1690,8 +1690,8 @@
+ 
+ 	for (i=0; i < maxcmd; i++) {
+ 		/* Check penalty */
+-		if (My_Connections[Idx].delaytime > starttime)
+-			return 0;
++		//if (My_Connections[Idx].delaytime > starttime)
++		//	return 0;
+ #ifdef ZLIB
+ 		/* Unpack compressed data, if compression is in use */
+ 		if (Conn_OPTION_ISSET(&My_Connections[Idx], CONN_ZIP)) {
+diff -Nur ngircd.orig/src/ngircd/defines.h ngircd/src/ngircd/defines.h
+--- ngircd.orig/src/ngircd/defines.h	2018-05-26 14:41:23.030058534 +0000
++++ ngircd/src/ngircd/defines.h	2018-05-26 14:48:39.462731699 +0000
+@@ -68,10 +68,10 @@
+ /* Hard-coded (default) options */
+ 
+ /** Delay after startup before outgoing connections are initiated in seconds. */
+-#define STARTUP_DELAY 1
++#define STARTUP_DELAY 0
+ 
+ /** Time to delay re-connect attempts in seconds. */
+-#define RECONNECT_DELAY 3
++#define RECONNECT_DELAY 0 
+ 
+ /** Configuration file name. */
+ #define CONFIG_FILE "/ngircd.conf"
+diff -Nur ngircd.orig/src/ngircd/irc-write.c ngircd/src/ngircd/irc-write.c
+--- ngircd.orig/src/ngircd/irc-write.c	2018-05-26 14:41:23.038058619 +0000
++++ ngircd/src/ngircd/irc-write.c	2018-05-26 14:49:24.295215261 +0000
+@@ -554,7 +554,7 @@
+ 	if (c <= NONE)
+ 		return;
+ 
+-	Conn_SetPenalty(c, Seconds);
++	//Conn_SetPenalty(c, Seconds);
+ } /* IRC_SetPenalty */
+ 
+ static const char *
