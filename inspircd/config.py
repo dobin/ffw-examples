@@ -26,6 +26,8 @@
     # "tcp" or "udp" protocol?
     "ipproto": "tcp",
 
+    "recvTimeout": 0.1,
+    "protocol": True,
     "use_netnamespace": True,
     "honggpath": "/Development/honggfuzz/honggfuzz",
 }

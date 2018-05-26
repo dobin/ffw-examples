@@ -2,10 +2,10 @@
 mkdir bin corpus crashes verified temp
 
 git clone https://github.com/inspircd/inspircd.git
+patch -p0 < removesleep.patch
 cd inspircd
 
 git checkout v2.0.26
-
 export HFUZZ_CC_ASAN="true"
 export CC="/Development/honggfuzz/hfuzz_cc/hfuzz-gcc"
 export CPP="/Development/honggfuzz/hfuzz_cc/hfuzz-g++"
@@ -17,3 +17,7 @@ make install
 cd ../bin/
 mkdir conf
 ln -s /ffw-examples/inspircd/bin/examples/ /ffw-examples/inspircd/bin/conf/
+
+
+cp corpus.init/* corpus/
+cp config

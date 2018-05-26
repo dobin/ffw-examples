@@ -1,0 +1,22 @@
+diff --git a/src/inspircd.cpp b/src/inspircd.cpp
+index 66f9bfdc5..e2b0b2a22 100644
+--- a/src/inspircd.cpp
++++ b/src/inspircd.cpp
+@@ -541,7 +541,7 @@ InspIRCd::InspIRCd(int argc, char** argv) :
+ 		<< "TO START INSPIRCD AS ROOT, HIT CTRL+C NOW AND RESTART" << std::endl
+ 		<< "THE PROGRAM AS A NORMAL USER. YOU HAVE BEEN WARNED!" << std::endl << std::endl
+ 		<< "InspIRCd starting in 20 seconds, ctrl+c to abort..." << std::endl;
+-		sleep(20);
++		//sleep(20);
+ 	}
+ #endif
+ 
+@@ -799,7 +799,7 @@ int InspIRCd::Run()
+ 		 * timing using this event, so we dont have to
+ 		 * time this exactly).
+ 		 */
+-		if (TIME.tv_sec != OLDTIME)
++		if (1)
+ 		{
+ #ifndef _WIN32
+ 			getrusage(RUSAGE_SELF, &ru);
