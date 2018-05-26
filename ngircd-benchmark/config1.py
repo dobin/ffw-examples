@@ -25,7 +25,7 @@
     "target_port": 6669,
 
     # how many fuzzing instances should we start
-    "processes": 4,
+    "processes": 8,
 
     "recvTimeout": 0.1,
 

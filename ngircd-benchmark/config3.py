@@ -21,7 +21,7 @@
     "target_port": 6669,
 
     # how many fuzzing instances should we start
-    "processes": 64,
+    "processes": 16,
 
     # "tcp" or "udp" protocol?
     "ipproto": "tcp",
