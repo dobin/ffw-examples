@@ -30,4 +30,6 @@
     "protocol": True,
     "use_netnamespace": True,
     "honggpath": "/Development/honggfuzz/honggfuzz",
+
+    "hideTargetStdout": False,
 }
