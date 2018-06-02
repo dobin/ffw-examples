@@ -30,5 +30,5 @@
 
     "honggpath": "/Development/honggfuzz/honggfuzz",
 
-    "restart_server_every": 10,
+    "restart_server_every": 50,
 }

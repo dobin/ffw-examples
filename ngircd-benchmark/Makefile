@@ -10,11 +10,12 @@ download:
 	git clone https://github.com/ngircd/ngircd.git
 	cd ngircd; git checkout e17d4bdec7857e7af9deb02681585fad15eb1ebd
 	apt-get -y install autoconf automake
+	patch -p0 < ngircd.patch
 
 compile:
 	cd ngircd; CC=/Development/honggfuzz/hfuzz_cc/hfuzz-gcc ./autogen.sh
 	cd ngircd; CC=/Development/honggfuzz/hfuzz_cc/hfuzz-gcc ./configure
-	cd ngircd; CC=/Development/honggfuzz/hfuzz_cc/hfuzz-gcc  HFUZZ_CC_ASAN="true"  make
+	cd ngircd; CC=/Development/honggfuzz/hfuzz_cc/hfuzz-gcc  HFUZZ_CC_ASAN=1  make
 	cp ngircd/src/ngircd/ngircd bin/
 
 
