@@ -26,6 +26,10 @@ compile:
 	# why is everyone hiding their damn executables?
 	cp libcoap/examples/.libs/coap-server bin/
 
+
+test:
+	python /ffw/ffw.py --config config.py --basedir /ffw --test
+
 fuzz:
 	python /ffw/ffw.py --config config.py --basedir /ffw --honggmode
 

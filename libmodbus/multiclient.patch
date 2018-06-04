@@ -1,4 +1,4 @@
---- libmodbus-3.0.6/tests/unit-test-server.c.orig	2018-05-20 16:33:10.417567691 +0000
+--- libmodbus-3.0.6/tests/unit-test-server.c	2018-05-20 16:33:10.417567691 +0000
 +++ libmodbus-3.0.6/tests/unit-test-server.c	2018-05-20 16:36:44.228164721 +0000
 @@ -100,7 +100,6 @@
  
