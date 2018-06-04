@@ -1,7 +1,7 @@
 diff --git a/src/inspircd.cpp b/src/inspircd.cpp
 index 66f9bfdc5..e2b0b2a22 100644
---- a/src/inspircd.cpp
-+++ b/src/inspircd.cpp
+--- inspircd/src/inspircd.cpp
++++ inspircd/src/inspircd.cpp
 @@ -541,7 +541,7 @@ InspIRCd::InspIRCd(int argc, char** argv) :
  		<< "TO START INSPIRCD AS ROOT, HIT CTRL+C NOW AND RESTART" << std::endl
  		<< "THE PROGRAM AS A NORMAL USER. YOU HAVE BEEN WARNED!" << std::endl << std::endl
