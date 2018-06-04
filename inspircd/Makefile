@@ -1,3 +1,5 @@
+export HFUZZ_CC_ASAN=1
+
 all: requirements download compile
 
 requirements:
@@ -13,10 +15,6 @@ download:
 	unix2dos inspircd/src/inspircd.cpp
 
 compile:
-	export HFUZZ_CC_ASAN="true"
-	export CC="/Development/honggfuzz/hfuzz_cc/hfuzz-gcc"
-	export CPP="/Development/honggfuzz/hfuzz_cc/hfuzz-g++"
-
 	cd inspircd; ./configure --disable-interactive --prefix=/ffw-examples/inspircd/bin/ --config-dir=/ffw-examples/inspircd/bin/ --module-dir=/ffw-examples/inspircd/bin/ --uid=daemon --with-cc=/Development/honggfuzz/hfuzz_cc/hfuzz-clang++
 	cd inspircd; make
 	cd inspircd; make install

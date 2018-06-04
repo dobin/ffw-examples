@@ -1,5 +1,7 @@
+export HFUZZ_CC_ASAN=1
+export CC=/Development/honggfuzz/hfuzz_cc/hfuzz-gcc
 
-all: requirements download patch compile
+all: requirements download compile
 
 requirements:
 	apt-get -y install autoconf automake pkg-config libtool
@@ -11,13 +13,9 @@ download:
 	# go to tested version
 	cd libcoap; git checkout 4cf5ff0c63c986611b85badafcdc8c8a88cdfe9a
 
-patch:
-	echo "patch"
 
 compile:
-	export HFUZZ_CC_ASAN="true"
-	export CC="/Development/honggfuzz/hfuzz_cc/hfuzz-gcc"
-
+	cd libcoap; ./autogen.sh
 	cd libcoap; ./configure --disable-dtls --disable-documentation
 	cd libcoap; make
 
