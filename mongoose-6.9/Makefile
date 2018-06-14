@@ -1,17 +1,14 @@
 
-all: requirements download patch compile
+all: requirements download compile
 
 requirements:
-	mkdir bin corpus crashes temp verified
+	mkdir -p bin corpus crashes temp verified
+	apt install -y libssl-dev
 
 download:
 	git clone https://github.com/cesanta/mongoose.git
-
 	# go to version 6.9
 	cd mongoose; git checkout 6.9
-
-patch:
-	echo "patch"
 
 compile:
 	# compile with honggfuzz compiler, and enabled asan

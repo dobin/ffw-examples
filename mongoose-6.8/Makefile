@@ -2,7 +2,8 @@
 all: requirements download compile
 
 requirements:
-	mkdir bin corpus crashes temp verified
+	mkdir -p bin corpus crashes temp verified
+	apt install libssl-dev
 
 download:
 	git clone https://github.com/cesanta/mongoose.git
@@ -22,6 +23,11 @@ compile:
 
 fuzz:
 	python /ffw/ffw.py --config config.py --basedir /ffw --fuzz
+
+
+intercept:
+	python /ffw/ffw.py --config config.py --basedir /ffw --intercept
+
 
 clean:
 	rm bin/mqtt_broker
