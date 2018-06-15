@@ -22,4 +22,5 @@ fuzz:
 clean:
 	rm -f bin/mqtt_broker
 	rm -f mqtt_client
-	cd mongoose/examples/mqtt_broker; make clean
+	cd mongoose/examples/mqtt_broker && make clean
+	rm -f corpus/* verified/* crashes/*

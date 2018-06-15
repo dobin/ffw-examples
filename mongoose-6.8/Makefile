@@ -3,11 +3,10 @@ all: requirements download compile
 
 requirements:
 	mkdir -p bin corpus crashes temp verified
-	apt install libssl-dev
+	apt install -y libssl-dev
 
 download:
 	git clone https://github.com/cesanta/mongoose.git
-
 	# go to version 6.8
 	cd mongoose; git checkout 6.8
 
@@ -28,8 +27,11 @@ fuzz:
 intercept:
 	python /ffw/ffw.py --config config.py --basedir /ffw --intercept
 
+verify:
+	python /ffw/ffw.py --config config.py --basedir /ffw --verify
 
 clean:
-	rm bin/mqtt_broker
-	rm mqtt_client
-	cd mongoose/exmples/mqtt_broker; make clean
+	rm -f bin/mqtt_broker
+	rm -f mqtt_client
+	cd mongoose/examples/mqtt_broker && make clean
+	rm -f corpus/* verified/* crashes/*

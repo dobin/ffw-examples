@@ -27,5 +27,5 @@
     # "tcp" or "udp" protocol?
     "ipproto": "tcp",
 
-    "restart_server_every": 10,
+    "restart_server_every": 32,
 }
